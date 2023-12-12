@@ -1,6 +1,6 @@
 # qgis-nsw-topo
 
-This repository is a rough attempt to implement the [NSWTopo](https://github.com/mholling/nswtopo) software directly in QGIS. 
+**qgis-nsw-topo** is designed to make basic topographic maps for NSW in QGIS, using spatial data from NSW Spatial Services. It is modelled directly on the [NSWTopo](https://github.com/mholling/nswtopo) software, but using QGIS rather than Ruby and Chrome.
 
 NSWTopo is a Ruby program developed by Matt Hollingworth for generating detailed topographic maps for NSW and ACT. There are good instructions on installing and using the program at the link above, though it requires the installation of several pieces software, and uses a command line interface, so is not for the novice.
 
@@ -13,7 +13,7 @@ There are three separate parts to the repo:
 * **Style Files** - these are standard QGIS style files, some of which have a dependency on Scalable Vector Graphics (SVG) files. Many of the styles have a garish-looking fallback (ELSE). This is so that any uncategorised features will stand out. These can be removed in future.
 * **SVG Files** - these are QGIS-specific SVGs, so may have some custom parameters to allow them to be configured within QGIS
 
-Under **Settings->Options->System**, add the path of the SVG files to the SVG Paths box.
+After downloading, under **Settings->Options->System** in QGIS, add the path of the SVG files to the SVG Paths box.
 
 ## Scripts
 
@@ -26,6 +26,8 @@ Click on the **New Editor** (+) button, and paste in the _loadNswTopographicLaye
 Once you have done this, you can click on **Run Script**. This will fetch data from the NSW Spatial Services servers. Depending on the size of the area - which you can see in https://maps.ozultimate.com - 340 sq km is A2, which should be more than enough for most purposes - the script will probably take about 5 minutes to run in the background. Urban areas will generally take longer than bush areas.
 
 When the script finishes, you should see a finished map on the screen. If the data is loaded but there is no styling, you have probably configured the style directory incorrectly.
+
+You can run the _saveLayersProjectToGpkg.py_ script to save the layers (and optionally the project) to a GeoPackage file.
 
 ### Manual steps
 - if you want to add a Grid to the main screen, this can be found in QGIS under **View->Decorations->Grid**. If you are not in a projected CRS, then the grid will be in degrees and not metres
