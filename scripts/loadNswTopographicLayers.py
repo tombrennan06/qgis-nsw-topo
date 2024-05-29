@@ -43,20 +43,6 @@ layerParams = [
     "outputCodeValueFields": ["classsubtype","perenniality"],
 },
 {
-    "layerName": "landformLine",
-    "url": "https://portal.spatial.nsw.gov.au/server/rest/services/NSW_Physiography_Category/MapServer",
-    "layer": "DLSLine",
-    "outputFields":["generalname","classsubtype"], 
-    "outputCodeValueFields": ["classsubtype"],
-},
-{
-    "layerName": "landformPoint",
-    "url": "https://portal.spatial.nsw.gov.au/server/rest/services/NSW_Physiography_Category/MapServer",
-    "layer": "DLSPoint",
-    "outputFields":["generalname","classsubtype"], 
-    "outputCodeValueFields": ["classsubtype"],
-},
-{
     "layerName": "fuzzyExtentWaterArea",
     "url": "https://portal.spatial.nsw.gov.au/server/rest/services/NSW_Water_Theme/MapServer",
     "layer": "FuzzyExtentWaterArea",
@@ -77,6 +63,20 @@ layerParams = [
     "where": "classsubtype IN (9,10)",
     "outputFields":["generalname","classsubtype","generalculturaltype"],
     "outputCodeValueFields": ["classsubtype","generalculturaltype"],
+},
+{
+    "layerName": "landformLine",
+    "url": "https://portal.spatial.nsw.gov.au/server/rest/services/NSW_Physiography_Category/MapServer",
+    "layer": "DLSLine",
+    "outputFields":["generalname","classsubtype"], 
+    "outputCodeValueFields": ["classsubtype"],
+},
+{
+    "layerName": "landformPoint",
+    "url": "https://portal.spatial.nsw.gov.au/server/rest/services/NSW_Physiography_Category/MapServer",
+    "layer": "DLSPoint",
+    "outputFields":["generalname","classsubtype"], 
+    "outputCodeValueFields": ["classsubtype"],
 },
 {
     "layerName": "hydroLine",
