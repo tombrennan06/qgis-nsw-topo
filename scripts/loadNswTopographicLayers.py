@@ -27,8 +27,8 @@ layerParams = [
     "layerName": "contourBase",
     "url": "https://portal.spatial.nsw.gov.au/server/rest/services/NSW_Elevation_and_Depth_Theme/MapServer",
     "layer": "Contour",
-    "outputFields":["classsubtype","elevation","relevance","verticalaccuracy"],
-    "outputCodeValueFields": ["classsubtype"],
+    "outputFields":["classsubtype","elevation","relevance","verticalaccuracy","sourceprogram"],
+    "outputCodeValueFields": ["classsubtype","sourceprogram"],
 },
 {
     "layerName": "cadastre",
