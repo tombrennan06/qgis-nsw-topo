@@ -6,6 +6,8 @@ NSWTopo is a Ruby program developed by Matt Hollingworth for generating detailed
 
 The **qgis-nsw-topo** repo consists of a mix of scripts, style files and Scalable Vector Graphics (SVG) graphics, and is also not software for the novice! The scripts are used to pull data from various NSW Spatial Services services and to load into QGIS. The SVG and style files are then used to style the data in an aesthetic way.
 
+![2024-05-31 10_30_04-bm-mt_victoria — QGIS](https://github.com/tombrennan06/qgis-nsw-topo/assets/2381307/1517adcd-8adc-4d8b-a845-d764128e816e)
+
 The repo cannot simply be downloaded and installed. Some level of familiarity is needed with running Python scripts in QGIS. The scripts have had limited testing, and also have limited error-handling embedded in them.
 
 There are three separate parts to the repo:
@@ -27,10 +29,16 @@ Once you have done this, you can click on **Run Script**. This will fetch data f
 
 When the script finishes, you should see a finished map on the screen. If the data is loaded but there is no styling, you have probably configured the style directory incorrectly.
 
-You can run the _saveLayersProjectToGpkg.py_ script to save the layers (and optionally the project) to a GeoPackage file.
+You can run the _saveLayersProjectToGpkg.py_ script, and then a command using it to save the layers (and optionally the project) to a GeoPackage file. If you do not save the project to the GeoPackage file, you will need to manually save it (Ctrl-S) to a QGZ file - recommended to be in the same directory as the GeoPackage for portability. For example, to save both layers and project to a GeoPackage:
+
+    saveLayersProjectToGpkg ('E:/geodata/bm-mt_victoria.gpkg', False, True, 'bm-mt_victoria')
+
+To save layers to a GeoPackage, while removing empty layers:
+
+    saveLayersProjectToGpkg ('E:/geodata/bm-mt_victoria.gpkg', True)
 
 ### Manual steps
-- if you want to add a Grid to the main screen, this can be found in QGIS under **View->Decorations->Grid**. If you are not in a projected CRS, then the grid will be in degrees and not metres
+- if you want to add a Grid to the main screen, this can be found in QGIS under **View->Decorations->Grid**. If you are not in a projected CRS, then the grid will be in degrees and not metres. It is probably best to change to a projected CRS. Most of eastern NSW is in Zone 56, so use GDA94/MGA Zone 56 (EPSG:28356). The other NSW zones are EPSG:28355 and EPSG:28354.
 - in order to print/export, you will need to create a layout. This can be found under **Project->New Print Layout** (Ctrl+P). There is lots of information on creating layouts online, and no instruction is provided here
 
 ## Style Files
