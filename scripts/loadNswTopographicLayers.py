@@ -1,5 +1,8 @@
+# update generalParams to match your file locations and layer extent name
 generalParams = {
+    # location of the style folder, likely called 'style'
     'styleFolder': 'E:/geodata/style/nsw_spatial/',
+    # name of the extent polygon layer in QGIS which will be used as the area in which to download spatial data
     'extentLayerName': 'extent',
 }
 
@@ -24,8 +27,8 @@ layerParams = [
     "layerName": "contourBase",
     "url": "https://portal.spatial.nsw.gov.au/server/rest/services/NSW_Elevation_and_Depth_Theme/MapServer",
     "layer": "Contour",
-    "outputFields":["classsubtype","elevation","relevance"],
-    "outputCodeValueFields": ["classsubtype"],
+    "outputFields":["classsubtype","elevation","relevance","verticalaccuracy","sourceprogram"],
+    "outputCodeValueFields": ["classsubtype","sourceprogram"],
 },
 {
     "layerName": "cadastre",
